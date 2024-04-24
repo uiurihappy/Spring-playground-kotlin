@@ -47,14 +47,6 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-idea {
-	module {
-		val kaptMain = file("build/generated/source/kapt/main")
-		sourceDirs.add(kaptMain)
-		generatedSourceDirs.add(kaptMain)
-	}
-}
-
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs += "-Xjsr305=strict"
