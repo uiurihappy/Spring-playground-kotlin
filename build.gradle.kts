@@ -32,22 +32,38 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 
-    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     implementation("com.github.f4b6a3:ulid-creator:5.2.3")
 
+    // Querydsl dependencies
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
     kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+
     kapt("jakarta.annotation:jakarta.annotation-api")
     kapt("jakarta.persistence:jakarta.persistence-api")
 
     compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
 
+    // Flyway dependencies
+    implementation("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-mysql")
+
+    // Database dependencies
     runtimeOnly("com.mysql:mysql-connector-j")
     runtimeOnly("com.h2database:h2")
 
-    annotationProcessor("org.projectlombok:lombok")
+    // Test dependencies
+    val koTestVersion = "5.8.1"
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:$koTestVersion")
+    testImplementation("io.kotest:kotest-assertions-core:$koTestVersion")
+    testImplementation("io.kotest:kotest-property:$koTestVersion")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
