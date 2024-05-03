@@ -11,7 +11,11 @@ class WebRequestLogger : HandlerInterceptor {
     val startTimeAttr = "startTime"
     val logger = logger()
 
-    override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any): Boolean {
+    override fun preHandle(
+        request: HttpServletRequest,
+        response: HttpServletResponse,
+        handler: Any,
+    ): Boolean {
         val startTime = System.currentTimeMillis()
         request.setAttribute(startTimeAttr, startTime)
         return true
@@ -28,9 +32,10 @@ class WebRequestLogger : HandlerInterceptor {
         val executionTime = endTime - startTime
 
         val userAgent = request.getHeader("User-Agent")
-        val originIp = request.getHeader("X-FORWARDED-FOR")
-            ?: request.getHeader("CF-Connecting-IP")
-            ?: request.remoteAddr
+        val originIp =
+            request.getHeader("X-FORWARDED-FOR")
+                ?: request.getHeader("CF-Connecting-IP")
+                ?: request.remoteAddr
 
         if (ex == null) {
             logger.info(
@@ -54,6 +59,5 @@ class WebRequestLogger : HandlerInterceptor {
                 userAgent,
             )
         }
-
     }
 }

@@ -34,24 +34,23 @@ class WebExceptionHandler {
             MethodArgumentTypeMismatchException::class,
             HttpMessageNotReadableException::class,
             ConstraintViolationException::class,
-        ]
+        ],
     )
-    fun handleInvalidInput(
-        exception: Exception,
-    ): ResponseEntity<ErrorResponse> {
-        val data: Any? = when (exception) {
-            is MethodArgumentNotValidException -> BindErrorUtils.resolve(exception.allErrors).values
-            is MethodArgumentTypeMismatchException -> exception.localizedMessage
-            is HttpMessageNotReadableException -> exception.localizedMessage
-            else -> null
-        }
+    fun handleInvalidInput(exception: Exception): ResponseEntity<ErrorResponse> {
+        val data: Any? =
+            when (exception) {
+                is MethodArgumentNotValidException -> BindErrorUtils.resolve(exception.allErrors).values
+                is MethodArgumentTypeMismatchException -> exception.localizedMessage
+                is HttpMessageNotReadableException -> exception.localizedMessage
+                else -> null
+            }
         return ResponseEntity
             .badRequest()
             .body(
                 ErrorResponse.fromErrorCode(
                     errorCode = ErrorCode.INVALID_INPUT,
                     data = data,
-                )
+                ),
             )
     }
 
@@ -66,8 +65,9 @@ class WebExceptionHandler {
             .body(ErrorResponse.fromErrorCode(ErrorCode.UNKNOWN_SERVER_ERROR))
     }
 
-    private fun DomainException.toErrorResponse() = ErrorResponse.fromErrorCode(
-        errorCode = errorCode,
-        data = data,
-    )
+    private fun DomainException.toErrorResponse() =
+        ErrorResponse.fromErrorCode(
+            errorCode = errorCode,
+            data = data,
+        )
 }
