@@ -1,0 +1,21 @@
+spring:
+    application:
+        name: kopring playground
+    flyway:
+        enabled: true
+        baseline-on-migrate: true
+    datasource:
+        url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB_NAME}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&tinyInt1isBit=false
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        hikari:
+            maxLifetime: 580000
+            maximum-pool-size: 20
+        username: ${MYSQL_USER}
+        password: ${MYSQL_PASSWORD}
+    jpa:
+        hibernate:
+          ddl-auto: update
+        properties:
+          hibernate:
+            format_sql: true
+            show_sql: true
