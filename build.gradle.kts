@@ -63,7 +63,8 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5-jvm:$koTestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$koTestVersion")
     testImplementation("io.kotest:kotest-property:$koTestVersion")
-
+    // fixture monkey dependencies
+    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter:1.0.14")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
