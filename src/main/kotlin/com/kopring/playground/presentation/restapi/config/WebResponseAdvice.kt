@@ -1,7 +1,6 @@
 package com.kopring.playground.presentation.restapi.config
 
 import com.kopring.playground.presentation.restapi.dto.GlobalResponse
-import com.kopring.playground.util.logger
 import org.springframework.core.MethodParameter
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
@@ -13,10 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice
 
 @RestControllerAdvice(basePackages = ["com.kopring.playground"])
-class WebResponseAdvice: ResponseBodyAdvice<Any> {
+class WebResponseAdvice : ResponseBodyAdvice<Any> {
     override fun supports(
         returnType: MethodParameter,
-        converterType: Class<out HttpMessageConverter<*>>
+        converterType: Class<out HttpMessageConverter<*>>,
     ): Boolean {
         return true
     }
@@ -27,7 +26,7 @@ class WebResponseAdvice: ResponseBodyAdvice<Any> {
         selectedContentType: MediaType,
         selectedConverterType: Class<out HttpMessageConverter<*>>,
         request: ServerHttpRequest,
-        response: ServerHttpResponse
+        response: ServerHttpResponse,
     ): Any? {
         val servletResponse =
             (response as ServletServerHttpResponse).servletResponse
@@ -41,5 +40,4 @@ class WebResponseAdvice: ResponseBodyAdvice<Any> {
         }
         return body
     }
-
 }
