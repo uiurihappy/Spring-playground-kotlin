@@ -30,11 +30,16 @@ class MemberEntity private constructor(
         )
 
     override fun equals(other: Any?): Boolean {
+        // 동일성 비교
         if (this === other) return true
+
+        // null 비교
         if (javaClass != other?.javaClass) return false
 
+        // 캐스팅
         other as MemberEntity
 
+        // id 비교
         return id == other.id
     }
 
