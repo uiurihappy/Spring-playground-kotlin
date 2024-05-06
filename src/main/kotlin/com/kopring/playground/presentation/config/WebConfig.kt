@@ -1,6 +1,6 @@
-package com.kopring.playground.presentation.restapi.config
+package com.kopring.playground.presentation.config
 
-import com.kopring.playground.presentation.restapi.config.interceptor.WebRequestLogger
+import com.kopring.playground.presentation.config.interceptor.WebRequestLogger
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer

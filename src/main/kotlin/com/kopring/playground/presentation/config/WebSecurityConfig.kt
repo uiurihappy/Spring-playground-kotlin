@@ -1,4 +1,4 @@
-package com.kopring.playground.presentation.restapi.config
+package com.kopring.playground.presentation.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

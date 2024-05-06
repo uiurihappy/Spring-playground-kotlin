@@ -1,6 +1,6 @@
-package com.kopring.playground.presentation.restapi.config
+package com.kopring.playground.presentation.config
 
-import com.kopring.playground.presentation.restapi.dto.GlobalResponse
+import com.kopring.playground.presentation.dto.GlobalResponse
 import org.springframework.core.MethodParameter
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType

@@ -1,4 +1,4 @@
-package com.kopring.playground.presentation.restapi.config
+package com.kopring.playground.presentation.config
 
 import io.swagger.v3.oas.models.Components
 import io.swagger.v3.oas.models.OpenAPI

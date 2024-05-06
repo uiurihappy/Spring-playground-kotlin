@@ -1,8 +1,8 @@
-package com.kopring.playground.presentation.restapi.config
+package com.kopring.playground.presentation.config
 
 import com.kopring.playground.domain.exception.DomainException
 import com.kopring.playground.domain.exception.ErrorCode
-import com.kopring.playground.presentation.restapi.dto.ErrorResponse
+import com.kopring.playground.presentation.dto.ErrorResponse
 import com.kopring.playground.util.logger
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.validation.ConstraintViolationException

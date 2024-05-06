@@ -1,4 +1,4 @@
-package com.kopring.playground.presentation.restapi.dto
+package com.kopring.playground.presentation.dto
 
 import com.kopring.playground.domain.exception.ErrorCode
 import io.swagger.v3.oas.annotations.media.Schema

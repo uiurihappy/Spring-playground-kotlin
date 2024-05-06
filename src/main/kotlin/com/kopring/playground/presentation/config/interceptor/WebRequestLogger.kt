@@ -1,4 +1,4 @@
-package com.kopring.playground.presentation.restapi.config.interceptor
+package com.kopring.playground.presentation.config.interceptor
 
 import com.kopring.playground.util.logger
 import jakarta.servlet.http.HttpServletRequest
