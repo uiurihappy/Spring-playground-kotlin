@@ -35,8 +35,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
-
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // Coroutines dependencies
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
+
 
     implementation("com.github.f4b6a3:ulid-creator:5.2.3")
 
